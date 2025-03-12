@@ -1,0 +1,9 @@
+[workspace]
+members = ["verifier", "example/program", "example/script"]
+resolver = "2"
+
+[workspace.dependencies]
+sp1-verifier = { version = "4.0.0", default-features = false }
+sp1-sdk = { version = "4.0.0" }
+sp1-zkvm = { version = "4.0.0" }
+sp1-build = { version = "4.0.0" }

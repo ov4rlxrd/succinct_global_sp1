@@ -1,0 +1,415 @@
+body { margin: 0; overflow: hidden; background: black; }
+        #globe-container { position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; background-image: url('imgs/background.png');
+            background-size: cover;}
+        #title {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 32px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.8);
+            z-index: 10;
+        }
+        #tooltip {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 14px;
+            display: none;
+            pointer-events: none;
+            z-index: 10;
+        }
+    
+       #start_window {
+            display: block;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(30, 30, 30, 0.95);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+            z-index: 100;
+            width: 550px;
+            color: white;
+       }
+
+      
+
+
+
+        #start_window button:hover {
+            background: rgb(22, 22, 22);
+        }
+        
+
+        #difficulty_selection {
+            margin-top: 10%;
+            padding: 5px;
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+        }
+        
+        #proved {
+            color: rgb(247, 6, 206);
+        }
+        
+        #prover {
+            color: rgb(0, 222, 252);
+        }
+        
+        #super_prover {
+            color: rgb(128, 2, 90) !important; 
+        }
+        
+    
+        #difficulty_selection_proved_btn {
+            padding: 10px 20px;
+            color: white;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), 
+            url('/imgs/succint.png') no-repeat center center;
+            background-size: cover;
+            border-radius: 8px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.4s ease, transform 0.2s ease, box-shadow 0.3s ease;
+        }
+        
+        #difficulty_selection_proved_btn:hover {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), 
+            url('/imgs/succint.png') no-repeat center center !important;
+            background-size: cover;
+            transform: scale(1.1);
+            box-shadow: 0px 4px 15px rgba(180, 180, 255, 0.5);
+        }
+        
+
+        #difficulty_selection_prover_btn {
+            padding: 10px 20px;
+            color: white;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), 
+            url('/imgs/succint.png') no-repeat center center;
+            background-size: cover;
+            border-radius: 8px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.4s ease, transform 0.2s ease, box-shadow 0.3s ease;
+        }
+        
+        #difficulty_selection_prover_btn:hover {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), 
+            url('/imgs/succint.png') no-repeat center center !important;
+            background-size: cover;
+            transform: scale(1.1);
+            box-shadow: 0px 4px 15px rgba(180, 180, 255, 0.5);
+        }
+        
+
+        #difficulty_selection_super_prover_btn {
+            padding: 10px 20px;
+            color: white;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), 
+            url('/imgs/succint.png') no-repeat center center;
+            background-size: cover;
+            border-radius: 8px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.4s ease, transform 0.2s ease, box-shadow 0.3s ease;
+        }
+        
+        #difficulty_selection_super_prover_btn:hover {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), 
+            url('/imgs/succint.png') no-repeat center center !important;
+            transform: scale(1.1);
+            box-shadow: 0px 4px 15px rgba(180, 180, 255, 0.5);
+        }
+
+
+        #right_answer {
+            display: none;
+            position: fixed;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(30, 30, 30, 0.95);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+            z-index: 100;
+            width: 300px;
+            color: white;
+        }
+
+        #right_answer_btn button {
+            padding: 15px;
+            font-size: 18px;
+            text-align: center;
+            border: 2px solid white;
+            border-radius: 5px;
+            background: black;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        #wrong_answer {
+            display: none;
+            position: fixed;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(30, 30, 30, 0.95);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+            z-index: 100;
+            width: 300px;
+            color: white;
+        }
+
+        #wrong_answer_btn button {
+            padding: 15px;
+            font-size: 18px;
+            text-align: center;
+            border: 2px solid white;
+            border-radius: 5px;
+            background: black;
+            color: white;
+            margin-bottom: 15px;
+        }
+        
+        #countries_to_guess {
+            display: none;
+            position: fixed;
+            top: 90%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(30, 30, 30, 0.95);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+            z-index: 100;
+            width: 300px;
+            color: white;
+        }
+        #win_window {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(30, 30, 30, 0.95);
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+            z-index: 100;
+            width: 500px;
+            color: white;
+      }
+
+        #toggle_buttons_cont {
+            display: none;
+            justify-content: space-around;
+            left: 30%;
+        }
+        #toggle_mode_whitepaper {
+            display: block;
+            cursor: pointer;
+            background: rgba(30, 30, 30, 0.95);
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+            z-index: 100;
+            width: 200px;
+            color: white;
+            transition: background-color 0.4s ease, transform 0.2s ease, box-shadow 0.3s ease;
+        }
+        #toggle_mode_whitepaper:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 4px 15px rgba(180, 180, 255, 0.5);
+        }
+        #toggle_mode_dark {
+            display: block;
+            cursor: pointer;
+            background: rgba(30, 30, 30, 0.95);
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+            z-index: 100;
+            width: 200px;
+            color: white;
+            transition: background-color 0.4s ease, transform 0.2s ease, box-shadow 0.3s ease;
+        }
+        #toggle_mode_dark:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 4px 15px rgba(180, 180, 255, 0.5);
+        }
+
+        #badge {
+            width: 500px;
+        }
+        
+        #score_display {
+            display: none;
+            position: fixed;
+            top: 30%;
+            left: 80%;
+            transform: translate(-50%, -50%);
+            background: rgba(30, 30, 30, 0.95);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+            z-index: 100;
+            width: 100px;
+            color: white;
+        }
+
+        #timer_display {
+            display: none;
+            position: fixed;
+            top: 20%;
+            left: 80%;
+            transform: translate(-50%, -50%);
+            background: rgba(30, 30, 30, 0.95);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+            z-index: 100;
+            width: 100px;
+            color: white;
+        }
+        
+
+
+        #score_change_display {
+            position: absolute; 
+            color: white; 
+            font-size: 40px; 
+            font-weight: bold; 
+            opacity: 0; 
+            transition: opacity 1s;
+        }
+
+        #score_change_display_negative {
+            position: absolute; 
+            color: rgb(240, 99, 99); 
+            font-size: 40px; 
+            font-weight: bold; 
+            opacity: 0; 
+            transition: opacity 1s;
+        }
+
+        #nft_popup{
+            position: absolute; 
+            left: 50%; 
+            top: 50%; 
+            transform: 
+            translate(-50%, -50%); 
+            z-index: 1000; 
+            display: none;
+        }
+
+        #nft_image {
+            width: 200px; 
+            height: auto;
+        }
+
+        #nft_description {
+            color: #fff;
+            font-weight: 700;
+        }
+
+        #social-buttons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 100;
+}
+
+#win_text {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#win_text_2 {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+#prove_win_score {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 5px;
+    border-radius: 10px;
+    background: rgb(255, 255, 255);
+    color: black;
+    transition: all 0.3s ease;
+}
+#prove_win_score:hover {
+    background: #000;
+    color: white;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: rgb(255, 255, 255);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.social-btn img {
+    width: 60%;
+    height: 60%;
+    transition: transform 0.3s ease;
+}
+
+
+.social-btn:hover {
+    background: white;
+    transform: scale(1.1);
+}
+
+.social-btn:hover img {
+    transform: scale(1.2);
+}
+
+
+.twitter:hover {
+    background: #ffffff;
+}
+
+.discord:hover {
+    background: #030307;
+}
+
+.telegram:hover {
+    background: #0088cc;
+}
+
+.story:hover {
+    background: #ffffff;
+}

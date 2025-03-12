@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Succinct Map</title>
+    <script src="https://unpkg.com/three"></script>
+    <script src="https://unpkg.com/globe.gl"></script>
+    <script src="https://unpkg.com/topojson"></script>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+
+    <div id="title">Succinct Map</div>
+    <div id="tooltip"></div>
+    <div id="win_window">
+        <img id="badge" src="imgs/win_pic.png">
+        <div id="win_text">You won!<br>
+            <span id="win_text_2">You got 100 points</span><br>
+            <button id="prove_win_score">Prove ur score</button>
+            <button id="verify_proof">Verify proof</button>
+        </div>
+    </div>
+    <div id="globe-container"></div>
+
+    <div id="start_window">Hi! You are in Succinct map, you have to guess the 3-5 countries that the globe has guessed and get your prize. Also on the map there are legendary nft cards, they give 500 points, but be careful, if you answer wrong, the points will be removed Good luck!
+        <br>
+        <span id="difficulty_text">Choose difficulty</span><br>
+        <div id="difficulty_selection">
+            <button id="difficulty_selection_proved_btn"><span id="proved">Proved Ur Love</span> <br><br>He has just started his journey in the project, but has already gained enough respect from the top roles. It is up to him to break new ground and prove his worth.</button>
+            <button id="difficulty_selection_prover_btn"><span id="prover">Prover</span><br><br>He has mastered the basics, is confidently navigating the project and knows where to go next. His knowledge and skills allow him to find solutions faster, but the challenges get tougher.</button>
+            <button id="difficulty_selection_super_prover_btn"><span id="super_prover">Super Prover</span><br><br>He has reached the pinnacle of mastery, turned into a true connoisseur of the project.</button>
+        </div>
+        <br><br>
+        <div id="toggle_buttons_cont">
+        <button id="toggle_mode_whitepaper">
+            Meme Mode
+        </button>
+        <button id="toggle_mode_dark">
+            Default Mode
+        </button>
+        </div>
+    </div>
+    <div id="countries_to_guess"></div>
+
+    <div id="right_answer">You guess right!
+    </div>
+    <div id="wrong_answer">Try another one!
+    </div>
+    
+    <div id="nft_popup">
+        <img id="nft_image" src="" alt="NFT Card"/>
+        <p id="nft_description"></p>
+    </div>
+
+    <div id="score_change_display" >
+        +100
+    </div>
+    <div id="score_change_display_negative">
+        -25
+    </div>
+    <div style="right: 90%; top: 90%; z-index: 100; position: absolute; color: #fff;"> Made by Ov4rlxrd with love for Succinct Community</div>
+    <div id="score_display">
+        Score: 0
+
+    </div>
+    <div id="timer_display">
+        0 sec
+    </div>
+    
+    <div id="social-buttons">
+        <a href="https://www.succinct.xyz/" target="_blank" class="social-btn story">
+            <img src="imgs/Succinct Logo.png" alt="succinct">
+        </a>
+        <a href="https://x.com/DDenicah" target="_blank" class="social-btn twitter">
+            <img src="imgs/x_icon.png" alt="Twitter">
+        </a>
+        <a href="https://discord.gg/succinctlabs" target="_blank" class="social-btn discord">
+            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png" alt="Discord">
+        </a>
+        <a href="https://t.me/ov4rlxrd" target="_blank" class="social-btn telegram">
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram">
+        </a>
+    </div>
+
+    <script src="script.js" type="module"></script>
+
+</body>
+</html>
+
+
+
